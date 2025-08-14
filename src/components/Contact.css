@@ -1,0 +1,12 @@
+/* Make messages highly visible */
+.custom-success {
+  color: #00e676 !important; /* bright green */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.custom-error {
+  color: #ff5252 !important; /* bright red */
+  font-weight: bold;
+  font-size: 1rem;
+}

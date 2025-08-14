@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import './Contact.css';
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -29,7 +30,6 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Simple client-side validation
     const { firstName, lastName, email, phone, message } = formDetails;
     if (!firstName || !lastName || !email || !phone || !message) {
       setError("Please fill in all the fields.");
@@ -115,10 +115,17 @@ export const Contact = () => {
                         ></textarea>
 
                         {/* Error or Success Message */}
-                        {error && <p className="text-danger" style={{ marginTop: '10px' }}>{error}</p>}
+                        {error && (
+                          <p
+                            className="text-danger custom-error"
+                            style={{ marginTop: '10px' }}
+                          >
+                            {error}
+                          </p>
+                        )}
                         {status.message && (
                           <p
-                            className={status.success ? "text-success" : "text-danger"}
+                            className={status.success ? "text-success custom-success" : "text-danger custom-error"}
                             style={{ marginTop: '10px' }}
                           >
                             {status.message}
